@@ -1,0 +1,47 @@
+.dot {
+    offset-path: path('M 0 0 Q 150 500 300 0');
+    animation: move 4s cubic-bezier(0.78, 0, 0.17, 0.99) infinite alternate;
+  }
+  
+  @keyframes move{
+    100%{
+      offset-distance: 100%;
+    }
+  }
+  
+  .dot{
+    background: lightblue;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid slateblue; */
+    /* border-radius: 5px; */
+  }
+  
+  section{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+  svg {
+    position: absolute;
+    /* stroke-width: 2px; */
+  }
+  
+  body{
+    background: Azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+  }
+  
+  *{
+    box-sizing: border-box;
+  }
