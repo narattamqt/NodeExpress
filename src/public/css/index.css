@@ -1,47 +1,61 @@
-.dot {
-    offset-path: path('M 0 0 Q 150 500 300 0');
-    animation: move 4s cubic-bezier(0.78, 0, 0.17, 0.99) infinite alternate;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
   }
   
-  @keyframes move{
-    100%{
-      offset-distance: 100%;
+  .animation-wrapper {
+    width: 80%;
+    padding-bottom: 40%;
+  }
+  
+  /** Layered Animation **/
+  
+  .layered-animations {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1100px;
+    height: 550px;
+    margin: -275px 0 0 -550px;
+  }
+  
+  .layered-animations .shape {
+    position: absolute;
+    top: 50%;
+    overflow: visible;
+    width: 280px;
+    height: 280px;
+    margin-top: -140px;
+    stroke: transparent;
+    stroke-width: 1px;
+    fill: url(#shapesGradient);
+  }
+  
+  @media (min-width: 740px) {
+    .layered-animations .shape {
+      stroke-width: .5px;
     }
   }
   
-  .dot{
-    background: lightblue;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 2px solid slateblue; */
-    /* border-radius: 5px; */
+  .layered-animations .small.shape {
+    width: 64px;
+    height: 64px;
+    margin-top: -32px;
+    stroke: currentColor;
+    fill: currentColor;
   }
   
-  section{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: auto;
-  }
-  svg {
-    position: absolute;
-    /* stroke-width: 2px; */
-  }
-  
-  body{
-    background: Azure;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-    
-  }
-  
-  *{
-    box-sizing: border-box;
+  .layered-animations .x-small.shape {
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    stroke: currentColor;
+    fill: currentColor;
   }
